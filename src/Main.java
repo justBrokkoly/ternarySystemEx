@@ -2,15 +2,25 @@ public class Main {
 
     public static void main(String[] args)
     {
-        BTernary a=new BTernary("+++0-");
-        System.out.println( );
-        BTernary c=new BTernary("-0+");
 
-        BTernary sum = a.add(c);
-        BTernary sub=a.sub(c);
+        System.out.println(getValue("+++0-(-)-0+"));
+    }
 
+    public static String getValue(String s){
+        String firstValue;
+        String secondValue;
+        BTernary value;
+        if (s.contains("(+)")){
+           firstValue =  s.split("\\(\\+\\)")[0];
+           secondValue = s.split("\\(\\+\\)")[1];
+           value = new BTernary(firstValue).add(new BTernary(secondValue));
+        }else{
+            firstValue =  s.split("\\(-\\)")[0];
+            secondValue = s.split("\\(-\\)")[1];
+            value = new BTernary(firstValue).sub(new BTernary(secondValue));
+        }
 
-        System.out.println("sum= "+sum + "; sub= "+ sub);
+        return value.toString();
     }
 
 
