@@ -56,7 +56,7 @@ public class Main {
             a=longer;
             b=shorter;
 
-            //храним остаток
+            //храним перенос
             char carry='0';
             String sum="";
             for(int i=0;i<a.length();i++)
